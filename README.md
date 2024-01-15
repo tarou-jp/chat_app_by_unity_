@@ -24,4 +24,5 @@ scripts_unity: Unityで作成したソースコード
 - Node.js
 - C#
 - Python
-- 簡単な機械学習
+- 簡単な機械学習の実装
+  
