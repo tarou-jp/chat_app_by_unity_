@@ -18,6 +18,7 @@ after_websocket: サーバー側のソースコード（設定ファイル等は
 scripts_unity: Unityで作成したソースコード
 
 ## 使用例
+![サンプル画像](https://github.com/tarou-jp/chat_app_by_unity_/assets/117962902/8f2a2da2-5fcd-4192-9627-0b2c939e6fb7)
 
 ## 使用技術
 - Unity
