@@ -3,7 +3,7 @@ import sys
 import requests
 import openai
 # from voice import Create_Voice
-openai.api_key = "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"
+openai.api_key = "-------伏字-------"
 prompt = str(sys.argv[11]) #送られてきたテキスト
 
 res = openai.ChatCompletion.create(
