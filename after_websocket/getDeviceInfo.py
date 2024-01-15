@@ -4,7 +4,7 @@ import requests
 import json
 
 url = "https://api.switch-bot.com/v1.0/devices"
-headers = {"Authorization": "610dde5fdc00be8d64df41096222e319bb946579b55893bb974e2eb1ce5f9859ff526f1592d3baa00eb28c9e8f13e852"}
+headers = {"Authorization": "-------伏字-------"}
 r = requests.get(url, headers=headers)
 print("status=", r.status_code)
 
