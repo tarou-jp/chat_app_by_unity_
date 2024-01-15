@@ -6,7 +6,7 @@ import sys
 
 # prompt = str(sys.argv[1])
 prompt = "Light_off"
-auth_key = "610dde5fdc00be8d64df41096222e319bb946579b55893bb974e2eb1ce5f9859ff526f1592d3baa00eb28c9e8f13e852"
+auth_key = "-------伏字-------"
 
 if prompt == "TV":
    device_id = "02-202303221704-11553908"
