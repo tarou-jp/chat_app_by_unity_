@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Speech API WebSocket Sender</title>
+  <script>
+
+    var recognition = new webkitSpeechRecognition();
+    init()
+
+    function init() {
+      // WebSocket でサーバと接続
+      var ws = new WebSocket('wss://localhost:{CHROME_PORT}');
+
+      // Web Speech API で音声認識
+
+      // 連続音声認識
+      recognition.continuous = true;
+
+      // エラー表示
+      recognition.onerror = function(err) {
+          console.error(err);
+      }
+
+      // 無音停止時に自動で再開
+      recognition.onaudioend = function() {
+          setTimeout(function() {
+            recognition.start();
+          }, 1000);
+      }
+
+      // 音声認識結果をサーバへ送信
+      recognition.onresult = function(event) {
+        for (var i = event.resultIndex; i < event.results.length; ++i) {
+          var result = event.results[event.resultIndex][0].transcript;
+          document.getElementById('result').innerHTML = result;
+          ws.send(result);
+        }
+      }
+    };
+
+    function speach_start(){
+      recognition.start()
+    };
+
+    function speach_end(){
+      recognition.onend = null;
+			recognition.stop();
+    };
+
+  </script>
+</head>
+<body>
+  <div id="result"></div>
+  <button type="button" id="start" onclick="speach_start()">認識開始</button>
+  <button type="button" id="end" onclick="speach_end()">認識停止</button>
+</body>
+</html>
